@@ -1,5 +1,6 @@
 import streamlit as st
 
+st.set_page_config(page_title="Dino's website", layout="wide")
 st.write("# Welcome to class 13-1!")
 
 with st.expander("點擊展開/收起"):
@@ -7,7 +8,7 @@ with st.expander("點擊展開/收起"):
 
 st.write("---")
 
-num = st.number_input("輸入一個數字", step=10, max_value=100, min_value=0)
+num = st.number_input("輸入一個數字", step=5, max_value=100, min_value=0)
 st.write(f"### 您輸入的數字是：{num}")
 
 st.write("---")
