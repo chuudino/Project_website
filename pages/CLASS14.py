@@ -44,6 +44,9 @@ for i in range(3):
     col1, col2 = st.columns(2)
     with col1:
         st.button("點擊", key=f"btn{i+10}")
+        # if st.button("點擊", key=f"btn{i+10}"):
+        #   st.write("點擊了")
+        #   st.balloons()
     with col2:
         st.write(f"這是列2")
     st.write("---")
