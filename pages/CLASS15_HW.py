@@ -52,3 +52,5 @@ if "main" in info:
 
 else:
     st.warning("查詢失敗")
+
+st.title("氣溫預測圖")

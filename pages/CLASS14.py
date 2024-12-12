@@ -40,6 +40,7 @@ with col2:
     st.write("這是列2")
     st.write("這是列2")
 st.write("---")
+
 for i in range(3):
     col1, col2 = st.columns(2)
     with col1:

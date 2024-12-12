@@ -3,17 +3,19 @@ import os
 
 if "ans" not in st.session_state:
     st.session_state["ans"] = 1
-    # st.session_state.ans = 1
-ans = 1
+    # st.sessist.session_state["ans"]on_state.ans = 1
+ans = st.session_state["ans"]
+
+if "size" not in st.session_state:
+    st.session_state["size"] = 100  # 設定預設值
+size = st.session_state["size"]
 
 if st.button("點擊"):
     ans += 1
     st.session_state["ans"] += 1
 
-
 st.write(f"一般變數ans的值為{ans}")
 st.write(f"st.session_state['ans']的值為{st.session_state['ans']}")
-
 
 st.write("---")
 images_folder = "images"
@@ -33,6 +35,7 @@ st.write("---")
 images_folder = "images"
 images = os.listdir(images_folder)
 st.title("綜合練習")
+
 col1, col2 = st.columns(2)
 with col1:
     with st.expander("點擊展開/收起"):
