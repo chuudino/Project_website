@@ -3,12 +3,12 @@ import os
 
 if "ans" not in st.session_state:
     st.session_state["ans"] = 1
-    # st.sessist.session_state["ans"]on_state.ans = 1
-ans = st.session_state["ans"]
 
 if "size" not in st.session_state:
     st.session_state["size"] = 100  # 設定預設值
-size = st.session_state["size"]
+
+size = st.session_state["size"]  # 縮短名稱, 因為session_state是字典
+ans = 1
 
 if st.button("點擊"):
     ans += 1
