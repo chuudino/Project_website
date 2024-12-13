@@ -1,6 +1,8 @@
 import streamlit as st
 import os
 
+st.set_page_config(page_title="Dino's website", layout="wide")
+
 if "ans" not in st.session_state:
     st.session_state["ans"] = 1
 

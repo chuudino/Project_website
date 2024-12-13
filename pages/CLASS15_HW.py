@@ -8,6 +8,8 @@ import matplotlib.pyplot as plt
 from matplotlib.font_manager import FontProperties
 import dotenv
 
+st.set_page_config(page_title="Dino's website", layout="wide")
+
 
 # 讀取城市列表
 def load_city_list(file_path):
