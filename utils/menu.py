@@ -8,6 +8,6 @@ def menu():
     st.sidebar.markdown("---")
 
     st.sidebar.title("課程")
-    st.sidebar.page_link(page="pages/class13.py", label="課程 13")  # ???????????
-    st.sidebar.page_link(page="pages/class14.py", label="課程 14")  # ??????????
+    st.sidebar.page_link(page="pages/CLASS13.py", label="課程 13")  # ???????????
+    st.sidebar.page_link(page="pages/CLASS14.py", label="課程 14")  # ??????????
     st.sidebar.markdown("---")
