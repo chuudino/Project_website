@@ -10,7 +10,7 @@ if "messages" not in st.session_state:
     st.session_state.messages = []
 
 for message in demo_messages:
-   with st.chat_message(message["role"]):
+    with st.chat_message(message["role"]):
         st.write(message["content"])
 for message in st.session_state.messages:
     with st.chat_message(message["role"]):
@@ -24,15 +24,17 @@ if message := st.chat_input("請輸入訊息"):
     # 儲存訊息到歷史
     st.session_state.messages.append({"role": "user", "content": message})
 
-# 模擬助手回覆
-assistant_response = f"你剛才說了: {message}"
-with st.chat_message("assistant"):
-    st.write(assistant_response)
-# 儲存助手回覆到歷史
-st.session_state.messages.append({"role": "assistant", "content": assistant_response})
+    # 模擬助手回覆
+    assistant_response = f"你剛才說了: {message}"
+    with st.chat_message("assistant"):
+        st.write(assistant_response)
+    # 儲存助手回覆到歷史
+    st.session_state.messages.append(
+        {"role": "assistant", "content": assistant_response}
+    )
 
 
-
+"""
 for demo_messages = [
  {"role": "user", "content": "你好,請問怎麼學Python?"},
  {"role": "assistant", "content": "學習Python的基本步驟: \n1. 了解基礎語法\n2. 練習寫簡單程式\n3. 解決實際問題"},
@@ -54,3 +56,4 @@ if message := st.chat_input("請輸入訊息"):
     # 簡單的回覆
     with st.chat_message("assistant"):
         st.write(f"這是示範回覆：我收到你的訊息「{message}」")
+"""
