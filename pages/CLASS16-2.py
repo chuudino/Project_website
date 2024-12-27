@@ -8,7 +8,7 @@ st.title("聊天室")
 # 初始化聊天歷史
 if "messages" not in st.session_state:
     st.session_state.messages = []
-
+demo_messages = {}
 for message in demo_messages:
     with st.chat_message(message["role"]):
         st.write(message["content"])
