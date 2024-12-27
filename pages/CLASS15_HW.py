@@ -7,8 +7,9 @@ import datetime
 import matplotlib.pyplot as plt
 from matplotlib.font_manager import FontProperties
 import dotenv
+from utils import init_page
 
-st.set_page_config(page_title="Dino's website", layout="wide")
+init_page()
 
 
 # 讀取城市列表

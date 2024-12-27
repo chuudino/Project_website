@@ -1,6 +1,7 @@
 import streamlit as st
+from utils import init_page
 
-st.set_page_config(page_title="Dino's website", layout="wide")
+init_page()
 st.write("# columns練習")
 
 col1, col2 = st.columns(2)

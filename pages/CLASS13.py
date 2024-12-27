@@ -1,6 +1,8 @@
 import streamlit as st
+from utils import init_page
 
-st.set_page_config(page_title="Dino's website", layout="wide")
+init_page()
+
 st.write("# Welcome to class 13-1!")
 
 with st.expander("點擊展開/收起"):
