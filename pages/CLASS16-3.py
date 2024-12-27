@@ -47,4 +47,3 @@ if message :=st.chat_input("請輸入訊息"):
         st.session_state.messages.append({"role": "assistant", "content": assistant_response})
     except Exception as e:
         st.error(f"發生錯誤: {str(e)}")
- st.error(f"發生錯誤: {str(e)}")
