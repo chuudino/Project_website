@@ -23,8 +23,15 @@ if "messages" not in st.session_state:
 # 顯示聊天歷史
 for message in st.session_state.messages:
     if message["role"] != "system":  # 不顯示系統訊息
-        with st.chat_message(message["role"]):
-            st.write(message["content"])
+        # with st.chat_message(message["role"]):
+        #     st.write(message["content"])
+        if message["role"] == "user":
+            with st.chat_message("user", avatar="🦖"):
+                st.write(message["content"])
+
+        elif message["role"] == "assistant":
+            with st.chat_message("assistant", avatar="🤖"):
+                st.write(message["content"])
 
 # 取得使用者輸入的訊息
 if message := st.chat_input("請輸入訊息"):
@@ -34,14 +41,16 @@ if message := st.chat_input("請輸入訊息"):
     # 儲存訊息到歷史
     st.session_state.messages.append({"role": "user", "content": message})
 
-# 取得使用者輸入的訊息
-if message := st.chat_input("請輸入訊息"):
+    # 取得使用者輸入的訊息
+    # if message := st.chat_input("請輸入訊息"):
 
     # …省略…
 
     try:
+        # 呼叫 OpenAI API
         completion = client.chat.completions.create(
-            model="gpt-4o", messages=st.session_state.messages
+            model="gpt-4o",
+            messages=st.session_state.messages,
         )
         assistant_response = completion.choices[0].message.content
         # 顯示助手回覆

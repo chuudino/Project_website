@@ -9,14 +9,15 @@ dotenv.load_dotenv()
 def init_page():
     DEV = os.getenv("dev")
     if DEV == "True":
-        import subprocess
+        pass
+        # import subprocess
 
-        try:
-            subprocess.run(
-                ["pipreqs", ".", "--force"], check=True, text=True, capture_output=True
-            )
-        except Exception as e:
-            print(f"命令執行失敗：\n{e}")
+        # try:
+        #     subprocess.run(
+        #         ["pipreqs", ".", "--force"], check=True, text=True, capture_output=True
+        #     )
+        # except Exception as e:
+        #     print(f"命令執行失敗：\n{e}")
 
     st.set_page_config(page_title="Dino's website", page_icon="🦖", layout="wide")
     menu()
