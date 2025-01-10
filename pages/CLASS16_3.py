@@ -17,7 +17,7 @@ st.title("聊天室")
 # 初始化聊天歷史
 if "messages" not in st.session_state:
     st.session_state.messages = [
-        {"role": "system", "content": "你是一個有幫助的助手,請用繁體中文回答。"}
+        {"role": "system", "content": "你是一個有幫助的助手,請用繁體中文回答。 # zh_tw"}
     ]
 
 # 顯示聊天歷史
@@ -36,7 +36,7 @@ for message in st.session_state.messages:
 # 取得使用者輸入的訊息
 if message := st.chat_input("請輸入訊息"):
     # 顯示使用者的訊息
-    with st.chat_message("user"):
+    with st.chat_message("user", avatar="🦖"):
         st.write(message)
     # 儲存訊息到歷史
     st.session_state.messages.append({"role": "user", "content": message})
@@ -54,7 +54,7 @@ if message := st.chat_input("請輸入訊息"):
         )
         assistant_response = completion.choices[0].message.content
         # 顯示助手回覆
-        with st.chat_message("assistant"):
+        with st.chat_message("assistant", avatar="🤖"):
             st.write(assistant_response)
         # 儲存助手回覆到歷史
         st.session_state.messages.append(
