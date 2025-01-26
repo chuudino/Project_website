@@ -1,29 +1,10 @@
 import streamlit as st
 import os
 import random
+import emojis
 
 # 定義一些可用的 emoji 表情符號
-emojis = [
-    "🎈",
-    "🎉",
-    "🎊",
-    "🎋",
-    "🎍",
-    "🎎",
-    "🎏",
-    "🎐",
-    "🎑",
-    "🎀",
-    "🎁",
-    "💫",
-    "✨",
-    "🌟",
-    "⭐",
-    "🌙",
-    "🌞",
-    "🌍",
-    "🌈",
-]
+emojis = list(emojis.db.get_emoji_aliases().values())
 
 
 def menu():
