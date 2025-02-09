@@ -1,11 +1,11 @@
 import streamlit as st
 import os
 import random
-import emojis
+import emojis as emoji_module
 
 # 從 emojis 資料庫獲取所有可用的表情符號
 # 這些表情符號將用於為頁面添加隨機圖標
-emojis = list(emojis.db.get_emoji_aliases().values())
+emoji_list = list(emoji_module.db.get_emoji_aliases().values())
 
 
 def menu():
@@ -22,7 +22,7 @@ def menu():
         # 這樣可以讓選單更生動有趣
         st.session_state.pages_list = []
         for name in page_names:
-            st.session_state.pages_list.append(f"{name} {random.choice(emojis)}")
+            st.session_state.pages_list.append(f"{name} {random.choice(emoji_list)}")
 
     # 初始化當前頁面
     # 如果沒有選擇頁面，預設顯示首頁
@@ -31,7 +31,7 @@ def menu():
 
     # 在側邊欄創建導航菜單
     # 首頁永遠顯示在最上方，並使用房子圖標
-    st.sidebar.page_link(page="main.py", label="首頁", icon="🏠")
+    st.sidebar.page_link(page="main.py", label="首頁", icon=":material/house:")
     st.sidebar.markdown("---")  # 分隔線
 
     # 創建課程選單

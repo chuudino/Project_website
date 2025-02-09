@@ -7,7 +7,7 @@ dotenv.load_dotenv()
 
 
 def init_page():
-    DEV = os.getenv("dev")
+    DEV = os.getenv("dev", "false").lower() == "true"
     if DEV == "True":
         pass
         # import subprocess
